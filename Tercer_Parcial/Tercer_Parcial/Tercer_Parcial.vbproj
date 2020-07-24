@@ -74,17 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conexion.vb" />
-    <Compile Include="Menu.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.vb">
-      <DependentUpon>Menu.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,32 +90,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Trabajos.Designer.vb">
-      <DependentUpon>Trabajos.vb</DependentUpon>
+    <Compile Include="Tareas\Funciones.vb" />
+    <Compile Include="Trabajos clase\frmRestaurarContrasenia.Designer.vb">
+      <DependentUpon>frmRestaurarContrasenia.vb</DependentUpon>
     </Compile>
-    <Compile Include="Trabajos.vb">
+    <Compile Include="Trabajos clase\frmRestaurarContrasenia.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.vb">
-      <DependentUpon>Usuarios.vb</DependentUpon>
+    <Compile Include="Trabajos clase\frmUsuario.Designer.vb">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios.vb" />
+    <Compile Include="Trabajos clase\frmUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajos clase\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Trabajos clase\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Trabajos.resx">
-      <DependentUpon>Trabajos.vb</DependentUpon>
+    <EmbeddedResource Include="Trabajos clase\frmRestaurarContrasenia.resx">
+      <DependentUpon>frmRestaurarContrasenia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios.resx">
-      <DependentUpon>Usuarios.vb</DependentUpon>
+    <EmbeddedResource Include="Trabajos clase\frmUsuario.resx">
+      <DependentUpon>frmUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trabajos clase\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +138,10 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Trabajos clase\MensajeAennviar.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

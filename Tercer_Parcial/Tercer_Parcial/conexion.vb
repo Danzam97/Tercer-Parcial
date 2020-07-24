@@ -1,11 +1,13 @@
 ﻿Imports System.Data.SqlClient
 Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-FA1HDUQ;Initial Catalog=TiendaIIIP; Integrated Security=True")
+    Public conexion As SqlConnection = New SqlConnection("Data Source= DESKTOP-SRS9O5V\SQLSERVER;Initial Catalog=TiendaIIIP; Integrated Security=True")
     'Private cmb As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter
     Public cmb As SqlCommand
     Public dr As SqlDataReader
+    Public scmb As SqlCommandBuilder
+    Public dt As New DataTable
 
     Public Sub conectar()
         Try
@@ -39,6 +41,67 @@ Public Class conexion
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Function eliminarUsuario(idUsuario As Integer, rol As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("eliminarUsuario", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idUsuario", idUsuario)
+            cmb.Parameters.AddWithValue("@rol", rol)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+
+    Public Function validarUsuario(userName As String, psw As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("validarUsuario", conexion)
+            cmb.CommandType = 4
+            cmb.Parameters.AddWithValue("@userName", userName)
+            cmb.Parameters.AddWithValue("@psw", psw)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function consultarPSW(correo As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("buscarUsuarioPorCorreo", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@correo", correo)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
         End Try
     End Function
 

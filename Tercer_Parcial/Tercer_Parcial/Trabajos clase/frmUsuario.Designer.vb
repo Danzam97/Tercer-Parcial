@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class fmUsuarios
+Partial Class frmUsuario
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,6 +22,8 @@ Partial Class fmUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -47,12 +49,30 @@ Partial Class fmUsuarios
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(191, 311)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 15
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Location = New System.Drawing.Point(101, 311)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(84, 23)
+        Me.btnLimpiar.TabIndex = 14
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(102, 388)
+        Me.btnGuardar.Location = New System.Drawing.Point(20, 311)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar.TabIndex = 11
+        Me.btnGuardar.TabIndex = 13
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
@@ -78,10 +98,10 @@ Partial Class fmUsuarios
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(84, 35)
+        Me.GroupBox1.Location = New System.Drawing.Point(20, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(325, 336)
-        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.Size = New System.Drawing.Size(312, 264)
+        Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Usuario"
         '
@@ -254,21 +274,25 @@ Partial Class fmUsuarios
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Usuario"
         '
-        'fmUsuarios
+        'frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(462, 450)
+        Me.ClientSize = New System.Drawing.Size(368, 361)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "fmUsuarios"
-        Me.Text = "Usuarios"
+        Me.Name = "frmUsuario"
+        Me.Text = "frmUsuario"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents btnEliminar As Button
+    Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnGuardar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel6 As Panel
